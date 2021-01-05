@@ -1,0 +1,30 @@
+{
+  "name": "WGCommon",
+  "version": "0.1.0",
+  "summary": "A short description of WGCommon.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/jsonsnow/WGCommon",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "jsonsnow": "1183010734@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/jsonsnow/WGCommon.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "WGCommon/Classes/**/*",
+  "dependencies": {
+    "Masonry": [
+      "~> 1.0.1"
+    ],
+    "SVProgressHUD": [
+
+    ]
+  }
+}

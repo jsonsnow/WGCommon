@@ -1,0 +1,6 @@
+framework module Pods_WGCommon_Tests {
+  umbrella header "Pods-WGCommon_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
