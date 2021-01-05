@@ -7,6 +7,6 @@
 
 #ifndef MassoryBridge_h
 #define MassoryBridge_h
-
+#import <Masonry/Masonry.h>
 
 #endif /* MassoryBridge_h */
