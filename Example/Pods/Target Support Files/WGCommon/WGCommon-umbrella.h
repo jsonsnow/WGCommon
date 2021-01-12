@@ -10,6 +10,7 @@
 #endif
 #endif
 
+#import "BundleLoad.h"
 #import "NSString+WGSize.h"
 #import "UIView+ShapeView.h"
 #import "MassoryBridge.h"

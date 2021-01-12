@@ -297,7 +297,7 @@ public class WGAlertPopView: WGBasePopView {
     
     lazy var closeBtn: UIButton = {
         let closeBtn = UIButton.init(type: .custom)
-        closeBtn.setBackgroundImage(UIImage.init(named: "icon_popup_close"), for: .normal)
+        closeBtn.setBackgroundImage(BundleLoad.imageNamed("icon_popup_close"), for: .normal)
         closeBtn.addTarget(self, action: #selector(close), for: .touchUpInside)
         return closeBtn
     }()
