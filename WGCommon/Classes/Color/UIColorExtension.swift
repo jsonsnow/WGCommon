@@ -117,6 +117,10 @@ typealias Color = UIColor
      */
 #if os(macOS)
     public convenience init?(_ rgba: String, defaultColor: NSColor = NSColor.clear) {
+        var hexString = rgba
+        if !rgba.hasPrefix("#") {
+            hexString = "#\(rgba)"
+        }
         guard let color = try? Color(rgba_throws: rgba) else {
             self.init(cgColor: defaultColor.cgColor)
             return
@@ -125,7 +129,11 @@ typealias Color = UIColor
     }
 #else
     public convenience init(_ rgba: String, defaultColor: UIColor = UIColor.clear) {
-        guard let color = try? UIColor(rgba_throws: rgba) else {
+        var hexString = rgba
+        if !rgba.hasPrefix("#") {
+            hexString = "#\(rgba)"
+        }
+        guard let color = try? UIColor(rgba_throws: hexString) else {
             self.init(cgColor: defaultColor.cgColor)
             return
         }

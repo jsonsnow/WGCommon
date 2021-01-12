@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WGDropDownChoice: UIView {
+open class WGDropDownChoice: UIView {
     
     typealias WGclickHandler = () -> Void
     var title: String
@@ -28,7 +28,7 @@ class WGDropDownChoice: UIView {
         configTitle(title)
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

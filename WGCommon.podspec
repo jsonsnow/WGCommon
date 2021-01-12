@@ -32,10 +32,11 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'WGCommon/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'WGCommon' => ['WGCommon/Assets/*.png']
-  # }
-
+   s.resource_bundles = {
+     'WGCommon' => ['WGCommon/Assets/*.bundle',
+     'WGCommon/Assets/*.xcassets']
+   }
+   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
   
   s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'

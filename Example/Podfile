@@ -1,9 +1,9 @@
 use_frameworks!
 
 platform :ios, '9.0'
-
+#use_modular_headers!
 target 'WGCommon_Example' do
-  pod 'WGCommon', :path => '../'
+  pod 'WGCommon',:path => '../'
 
   target 'WGCommon_Tests' do
     inherit! :search_paths

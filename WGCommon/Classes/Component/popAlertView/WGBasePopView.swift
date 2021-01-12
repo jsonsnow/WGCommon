@@ -18,7 +18,7 @@ func one_pixel_line_value(with width: CGFloat = 1) -> CGFloat {
 }
 
 
-class WGBasePopView: UIView {
+open class WGBasePopView: UIView {
     
     var isTranslucent: Bool = true
     
@@ -68,7 +68,7 @@ class WGBasePopView: UIView {
     
 }
 
-class WGSheetPopView: WGBasePopView {
+open class WGSheetPopView: WGBasePopView {
     typealias WGSheetTitleArriteConfig = (_: String, _: Int) -> NSAttributedString?
     
     //MARK: props
@@ -80,14 +80,14 @@ class WGSheetPopView: WGBasePopView {
     
    
     //MARK: init
-    init(titles: [String], titleArributeConfig: WGSheetTitleArriteConfig?, clickHandle: @escaping (_ : Int) -> Void) {
+    @objc init(titles: [String], titleArributeConfig: WGSheetTitleArriteConfig?, clickHandle: @escaping (_ : Int) -> Void) {
         self.titls = titles
         self.titleConfig = titleArributeConfig
         self.clickHandle = clickHandle
         super.init(frame: .zero)
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -143,7 +143,7 @@ class WGSheetPopView: WGBasePopView {
     }
 }
 
-class WGAlertActionBtn: UIView {
+public class WGAlertActionBtn: UIView {
     
     var actionTitle: String?
     var actionFont: Float = 17
@@ -153,7 +153,7 @@ class WGAlertActionBtn: UIView {
     var nextAction: WGAlertActionBtn?
     var action: (()-> Void)?
     
-    @objc init(title: String, font: Float = 17 ,color: UIColor? = UIColor("#2E2E2F"),hideRightLine: Bool = false, action: (()-> Void)?) {
+    @objc public init(title: String, font: Float = 17 ,color: UIColor? = UIColor("#2E2E2F"),hideRightLine: Bool = false, action: (()-> Void)?) {
         self.actionTitle = title
         self.actionFont = font
         if color != nil {
@@ -169,7 +169,7 @@ class WGAlertActionBtn: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         layoutView()
     }
@@ -216,7 +216,7 @@ class WGAlertActionBtn: UIView {
     
 }
 
-class WGAlertPopView: WGBasePopView {
+public class WGAlertPopView: WGBasePopView {
     
     var titleStr: String?
     var msgStr: String?
@@ -224,7 +224,7 @@ class WGAlertPopView: WGBasePopView {
     var actions: [WGAlertActionBtn] = [WGAlertActionBtn]()
     let actionHeight: CGFloat = scaleX(48)
     
-    @objc init(title: String?, msg: String?) {
+    @objc public init(title: String?, msg: String?) {
         self.titleStr = title
         self.msgStr = msg
         super.init(frame: .zero)
@@ -235,7 +235,7 @@ class WGAlertPopView: WGBasePopView {
     }
     
     @discardableResult
-    @objc func addActionBtn(_ btn: WGAlertActionBtn) -> Self {
+    @objc public func addActionBtn(_ btn: WGAlertActionBtn) -> Self {
         actions.append(btn)
         self.containerView.addSubview(btn)
         let handle = btn.action
@@ -246,7 +246,7 @@ class WGAlertPopView: WGBasePopView {
         return self
     }
     
-    override func show(to view: UIView?) {
+    override public func show(to view: UIView?) {
         self.containerView.addSubview(title)
         self.containerView.addSubview(desc)
         let width: CGFloat = 320

@@ -13,6 +13,7 @@
 #import "NSString+WGSize.h"
 #import "UIView+ShapeView.h"
 #import "MassoryBridge.h"
+#import "WGCommon.h"
 
 FOUNDATION_EXPORT double WGCommonVersionNumber;
 FOUNDATION_EXPORT const unsigned char WGCommonVersionString[];

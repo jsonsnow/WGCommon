@@ -7,6 +7,7 @@
 //
 
 #import "NSString+WGSize.h"
+#import <WGCommon/WGCommon-Swift.h>
 
 @implementation NSString (WGSize)
 
