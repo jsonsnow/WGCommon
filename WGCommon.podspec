@@ -36,10 +36,10 @@ TODO: Add long description of the pod here.
      'WGCommon' => ['WGCommon/Assets/*.bundle',
      'WGCommon/Assets/*.xcassets']
    }
-   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
+#  s.resources = ['WGCommon/Assets/*.bundle','WGCommon/Assets/*.xcassets']
+  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES' }
   
-  s.public_header_files = 'Pod/Classes/**/*.h'
+  s.public_header_files = 'Pod/Classes/WGCommon.h'
   # s.frameworks = 'UIKit', 'MapKit'
    s.dependency 'Masonry', '~> 1.0.1'
-   s.dependency 'SVProgressHUD'
 end

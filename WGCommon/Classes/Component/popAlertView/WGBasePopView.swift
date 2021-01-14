@@ -18,18 +18,23 @@ func one_pixel_line_value(with width: CGFloat = 1) -> CGFloat {
 }
 
 
-open class WGBasePopView: UIView {
+@objc open class WGBasePopView: UIView {
     
-    var isTranslucent: Bool = true
+    public var isTranslucent: Bool = true
     
     deinit {
         print("pop view dealloc")
     }
   
-    @objc func show(to view: UIView?) -> Void {
+    @objc open func show(to view: UIView?) -> Void {
         var container = view
         if view == nil {
-            container = UIApplication.shared.keyWindow
+            let sharedSelector = NSSelectorFromString("sharedApplication")
+            if UIApplication.responds(to: sharedSelector) {
+                let shared = UIApplication.perform(sharedSelector)
+                let res = shared?.takeUnretainedValue() as! UIApplication
+                container = res.keyWindow
+            }
         }
         self.frame = container!.bounds
         container?.addSubview(self)
@@ -38,8 +43,9 @@ open class WGBasePopView: UIView {
         }
         self.addSubview(self.containerView)
     }
+
     
-    @objc func close() -> Void {
+    @objc open func close() -> Void {
         self.removeFromSuperview()
     }
 
@@ -51,7 +57,7 @@ open class WGBasePopView: UIView {
         }
     }
     
-    lazy var translucentView: UIView = {
+    @objc public lazy var translucentView: UIView = {
         let mask = UIView.init()
         mask.frame = self.bounds
         mask.backgroundColor = UIColor.init(white: 0, alpha: 0.5)
@@ -60,7 +66,7 @@ open class WGBasePopView: UIView {
         return mask
     }()
     
-    lazy var containerView: UIView = {
+    @objc public lazy var containerView: UIView = {
         let containerView = UIView.init()
         containerView.backgroundColor = UIColor.white
         return containerView
@@ -68,8 +74,8 @@ open class WGBasePopView: UIView {
     
 }
 
-open class WGSheetPopView: WGBasePopView {
-    typealias WGSheetTitleArriteConfig = (_: String, _: Int) -> NSAttributedString?
+public class WGSheetPopView: WGBasePopView {
+    public typealias WGSheetTitleArriteConfig = (_: String, _: Int) -> NSAttributedString?
     
     //MARK: props
     var titls: [String]!
@@ -80,7 +86,7 @@ open class WGSheetPopView: WGBasePopView {
     
    
     //MARK: init
-    @objc init(titles: [String], titleArributeConfig: WGSheetTitleArriteConfig?, clickHandle: @escaping (_ : Int) -> Void) {
+    @objc public init(titles: [String], titleArributeConfig: WGSheetTitleArriteConfig?, clickHandle: @escaping (_ : Int) -> Void) {
         self.titls = titles
         self.titleConfig = titleArributeConfig
         self.clickHandle = clickHandle
@@ -91,7 +97,7 @@ open class WGSheetPopView: WGBasePopView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func show(to view: UIView?) {
+    public override func show(to view: UIView?) {
         super.show(to: view)
         self.containerView.frame = frameByTitle(titls)
         self.adjustContainerFrame()

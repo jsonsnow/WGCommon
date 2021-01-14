@@ -10,13 +10,13 @@ import UIKit
 
 open class WGDropDownChoice: UIView {
     
-    typealias WGclickHandler = () -> Void
+    public typealias WGclickHandler = () -> Void
     var title: String
     var font: Float = 11
     var color: UIColor = UIColor("526286")
-    var clickHandle: WGclickHandler?
+    public var clickHandle: WGclickHandler?
     
-    init(title: String, font: Float, color: UIColor?, handle: WGclickHandler?) {
+    public init(title: String, font: Float, color: UIColor?, handle: WGclickHandler?) {
         self.title = title
         self.font = font
         self.clickHandle = handle
@@ -38,7 +38,7 @@ open class WGDropDownChoice: UIView {
         self.triangle.backgroundColor = UIColor("999999")
     }
     
-    func configTitle(_ title: String) -> Void {
+    public func configTitle(_ title: String) -> Void {
         let ocTitle = title as NSString
         self.titleBtn.setTitle(title, for: .normal)
         let size = ocTitle.getUISize(UIFont.systemFont(ofSize: CGFloat(self.font)))

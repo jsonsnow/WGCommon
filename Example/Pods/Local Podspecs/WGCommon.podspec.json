@@ -28,13 +28,10 @@
   "pod_target_xcconfig": {
     "DEFINES_MODULE": "YES"
   },
-  "public_header_files": "Pod/Classes/**/*.h",
+  "public_header_files": "Pod/Classes/WGCommon.h",
   "dependencies": {
     "Masonry": [
       "~> 1.0.1"
-    ],
-    "SVProgressHUD": [
-
     ]
   }
 }

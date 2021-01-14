@@ -21,7 +21,8 @@
 + (NSBundle *)bundle {
 //    NSAssert([NSBundle mainBundle], @"not found bundle");
     return [self bundleWithName:@"WGCommon"];
-//    return [self bundleWithName:<#(NSString *)#>:self];
+//    return [NSBundle bundleForClass:self];
+//    return [NSBundle mainBundle];
 }
 
 + (UIView *)viewWithXibFileName:(NSString *)fileName {

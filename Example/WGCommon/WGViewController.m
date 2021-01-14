@@ -8,6 +8,7 @@
 
 #import "WGViewController.h"
 #import <WGCommon/WGCommon-Swift.h>
+#import <WGCommon/WGCommon.h>
 //#import <WGCommon/WGCommon-Swift.h>
 
 @interface WGViewController ()

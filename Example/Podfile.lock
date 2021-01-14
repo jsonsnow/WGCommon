@@ -1,9 +1,7 @@
 PODS:
   - Masonry (1.0.2)
-  - SVProgressHUD (2.2.5)
   - WGCommon (0.1.0):
     - Masonry (~> 1.0.1)
-    - SVProgressHUD
 
 DEPENDENCIES:
   - WGCommon (from `../`)
@@ -11,7 +9,6 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Masonry
-    - SVProgressHUD
 
 EXTERNAL SOURCES:
   WGCommon:
@@ -19,8 +16,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
-  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
-  WGCommon: c09837520b75278286428f39a300cb6d6c63ab59
+  WGCommon: 63f2e85c1fb7765c221bec51243b02c921ddf22e
 
 PODFILE CHECKSUM: 47f0a3c88e0935e81d4f09c2268900c264ecbf05
 

@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UILabel {
+public extension UILabel {
     static func factoryLabel(fonSize: Float, color: UIColor, numberOflines: Int = 0) -> UILabel {
         let label = UILabel.init()
         label.font = UIFont.systemFont(ofSize: CGFloat(fonSize))
