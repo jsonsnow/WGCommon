@@ -9,6 +9,15 @@ import Foundation
 
 public class PreferenceTool: NSObject {
     
+    static public func set(value: Any?, with key: String) {
+        UserDefaults.standard.setValue(value, forKey: key)
+        UserDefaults.standard.synchronize()
+    }
+    
+    static public func getValue(by key: String) -> Any? {
+        UserDefaults.standard.value(forKey: key)
+    }
+    
     static public func setValueInDefaultGroup(_ value: Any, key: String) {
         setValueInGroup(value, key: key)
     }

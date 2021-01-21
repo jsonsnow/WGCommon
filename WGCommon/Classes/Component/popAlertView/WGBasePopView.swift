@@ -29,12 +29,7 @@ func one_pixel_line_value(with width: CGFloat = 1) -> CGFloat {
     @objc open func show(to view: UIView?) -> Void {
         var container = view
         if view == nil {
-            let sharedSelector = NSSelectorFromString("sharedApplication")
-            if UIApplication.responds(to: sharedSelector) {
-                let shared = UIApplication.perform(sharedSelector)
-                let res = shared?.takeUnretainedValue() as! UIApplication
-                container = res.keyWindow
-            }
+            container = UIApplication.cl_keyWindow()
         }
         self.frame = container!.bounds
         container?.addSubview(self)
