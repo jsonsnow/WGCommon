@@ -18,7 +18,7 @@ import Foundation
         UserDefaults.standard.value(forKey: key)
     }
     
-    @objc static public func setValueInDefaultGroup(_ value: Any, key: String) {
+    @objc static public func setValueInDefaultGroup(_ value: Any?, key: String) {
         setValueInGroup(value, key: key)
     }
     
@@ -26,7 +26,7 @@ import Foundation
         return getValueInGroupWithKey(key)
     }
     
-    static public func setValueInGroup(_ value: Any, key: String, suiteName: String = "group.com.sd.StoreSystem.12.ShareExtension") -> Void {
+    static public func setValueInGroup(_ value: Any?, key: String, suiteName: String = "group.com.sd.StoreSystem.12.ShareExtension") -> Void {
         guard let userDefaults = UserDefaults.init(suiteName: suiteName) else {
             return
         }
